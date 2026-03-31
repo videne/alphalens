@@ -1,0 +1,4 @@
+# Node modules
+dist/
+build/
+node_modules/
