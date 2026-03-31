@@ -1,0 +1,4 @@
+export const formatCurrency = (value) => { if (!value) return '$0'; if (Math.abs(value) >= 1e12) return '$' + (value / 1e12).toFixed(2) + 'T'; if (Math.abs(value) >= 1e9) return '$' + (value / 1e9).toFixed(2) + 'B'; if (Math.abs(value) >= 1e6) return '$' + (value / 1e6).toFixed(2) + 'M'; return '$' + value.toFixed(2); };
+export const formatPercent = (value) => { if (!value) return '0%'; return (value).toFixed(2) + '%'; };
+export const formatNumber = (value, decimals = 2) => { if (!value) return '0'; return parseFloat(value).toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals, }); };
+export const formatDate = (dateStr) => { if (!dateStr) return ''; return new Date(dateStr).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', }); };
